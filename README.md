@@ -1,2 +1,1 @@
-# Exercises-ZIG
-Zig Language Exercises - Exploring Features and Syntax
+📗⚡ Compilation of examples and exercises made during the "Estruturas de Linguagens" class @ UERJ, using the Zig Language.
