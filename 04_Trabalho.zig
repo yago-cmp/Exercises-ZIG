@@ -21,10 +21,10 @@ fn formatacaoJson(allocator: std.mem.Allocator, structVar: anytype) ![]u8 {
         try json.append(allocator, '"');
         try json.append(allocator, ':');
 
-        const valor = @field(structVar, chave.name);
-        const tipo_valor = @typeInfo(@TypeOf(valor));
+        const tipo_valor = @typeInfo(chave.type);
 
         if (tipo_valor == .int or tipo_valor == .float or tipo_valor == .bool) {
+            const valor = @field(structVar, chave.name);
             try std.fmt.format(json.writer(allocator), "{}", .{valor});
         } else {
             @compileError("Apenas Int Float e Bool nessa implementação.");
